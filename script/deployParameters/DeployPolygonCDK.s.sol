@@ -4,14 +4,14 @@ pragma solidity ^0.8.15;
 import {DeployUniversalRouter} from '../DeployUniversalRouter.s.sol';
 import {RouterParameters} from 'contracts/base/RouterImmutables.sol';
 
-contract DeploySepolia is DeployUniversalRouter {
+contract DeployPolygonCDK is DeployUniversalRouter {
     function setUp() public override {
         params = RouterParameters({
-            permit2: 0x000000000022D473030F116dDEE9F6B43aC78BA3,
-            weth9: 0xfFf9976782d46CC05630D1f6eBAb18b2324d6B14,
-            seaportV1_5: 0x00000000000000ADc04C56Bf30aC9d3c0aAF14dC,
-            seaportV1_4: 0x00000000000001ad428e4906aE43D8F9852d0dD6,
-            openseaConduit: 0x1E0049783F008A0085193E00003D00cd54003c71,
+            permit2: UNSUPPORTED_PROTOCOL,
+            weth9: 0xe0F724F534968ed4B7a092e81FF6c6a6F471DeC3,
+            seaportV1_5: UNSUPPORTED_PROTOCOL,
+            seaportV1_4: UNSUPPORTED_PROTOCOL,
+            openseaConduit: UNSUPPORTED_PROTOCOL,
             nftxZap: UNSUPPORTED_PROTOCOL,
             x2y2: UNSUPPORTED_PROTOCOL,
             foundation: UNSUPPORTED_PROTOCOL,
@@ -24,11 +24,13 @@ contract DeploySepolia is DeployUniversalRouter {
             looksRareRewardsDistributor: UNSUPPORTED_PROTOCOL,
             looksRareToken: UNSUPPORTED_PROTOCOL,
             v2Factory: UNSUPPORTED_PROTOCOL,
-            v3Factory: 0x0227628f3F023bb0B980b67D528571c95c6DaC1c,
+            v3Factory: 0xc8C8669EfF35660C1fD25105Cb31b7d140ADdb4B,
             pairInitCodeHash: BYTES32_ZERO,
             poolInitCodeHash: 0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54
         });
 
-        unsupported = 0x5302086A3a25d473aAbBd0356eFf8Dd811a4d89B;
+        unsupported = UNSUPPORTED_PROTOCOL;
     }
 }
+
+// forge script --broadcast --rpc-url https://hitesh123:hitesh123@nodeme.testpoly-vali-a7c0ac.zeeve.net/rpc --private-key 63fe8d8db84e88ea3d9620aa9362340ec872df716bd272b13ddfa248bc015e3c --sig 'run()' --legacy script/deployParameters/DeployPolygonCDK.s.sol:DeployPolygonCDK

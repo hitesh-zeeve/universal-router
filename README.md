@@ -242,3 +242,5 @@ forge script --broadcast \
 script/deployParameters/DeployUniversalRouter.s.sol:DeployUniversalRouter \
 <pathToJSON>
 ```
+
+Here - install foundary to use `forge` command - https://book.getfoundry.sh/getting-started/installation
